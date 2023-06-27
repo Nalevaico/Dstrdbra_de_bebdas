@@ -1,0 +1,67 @@
+body {
+ background-image: url('fundo2.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family:'Times New Roman', Times, serif
+
+}
+
+h1 {
+  color: #000000;
+  text-align: center;
+
+}
+
+form {
+  background-color: #c4a56e;
+  position:relative;
+    top: 7rem;
+    left: 2rem;
+    width: 35%;
+    border-radius: 5px;
+    padding: 3rem;
+    margin: 0 auto;
+}
+
+label {
+  color: #000;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"]{
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+   overflow: hidden;
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 9px;
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
+
+input[type="submit"] {
+  background-color: #000;
+  color: #ecab39;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #252521;
+  color: #c4a56e;
+}
+
+footer {
+  text-align: left;
+  margin-top: 9rem;
+}
+
+footer img {
+  width: 100px;
+}
+

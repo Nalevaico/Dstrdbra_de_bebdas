@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="cad_clientes.css">
+</head>
+<body>
+
+  <form action="processar_cadastro.php" method="post">
+    <h1>CADASTRO DE CLIENTES</h1>
+    <label for="tipo_cliente">Tipo de Cliente:</label>
+    <select name="tipo_cliente" id="tipo_cliente" onchange="exibirCampos(this.value)">
+      <option value="pessoa_fisica">Pessoa Física</option>
+      <option value="pessoa_juridica">Pessoa Jurídica</option>
+    </select>
+
+    <div class="form-pf visible">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <label for="endereco">Endereço:</label>
+        <input type="text" name="endereco" id="endereco" required><br><BR>
+        <label for="cpf">CPF:</label>
+      <input type="text" name="cpf" id="cpf" placeholder="Ex: XXX.XXX.XXX-XX" maxlength="14">
+     <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="Ex:(DDD) XXXXX-XXXX" maxlength="15"><br> </br>
+      
+      <label for="senha">Digite uma senha:</label>
+      <input type="password" id="senha" name="senha" required maxlength="8" placeholder="Máximo 8 caracteres ">
+      <label for="senha">Confirme sua senha:</label>
+      <input type="password" id="senha" name="senha" required maxlength="8"><br><br>
+
+   
+      </div>
+
+    <div class="form-pj">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <label for="endereco">Endereço:</label>
+        <input type="text" name="endereco" id="endereco" required><br><BR>
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" name="cnpj" id="cnpj" placeholder="Ex: XX.XXX.XXX/YYYY-ZZ" maxlength="18">
+       <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required placeholder="Ex:(DDD) XXXXX-XXXX" maxlength="15"> <br></br>
+        <label for="senha">Digite uma senha:</label>
+        <input type="password" id="senha" name="senha" required maxlength="8" placeholder="Máximo 8 caracteres ">
+        <label for="senha">Confirme sua senha:</label>
+        <input type="password" id="senha" name="senha" required maxlength="8"><br><br>
+  
+  </div>
+
+    <input type="submit" value="Cadastrar">
+  </form>
+  <script>
+
+function exibirCampos(tipoCliente) {
+      var formPF = document.querySelector('.form-pf');
+      var formPJ = document.querySelector('.form-pj');
+
+      if (tipoCliente === 'pessoa_fisica') {
+        formPF.classList.add('visible');
+        formPJ.classList.remove('visible');
+      } else if (tipoCliente === 'pessoa_juridica') {
+        formPF.classList.remove('visible');
+        formPJ.classList.add('visible');
+      }
+    }
+    
+    document.getElementById("cnpj").addEventListener("input", function() {
+          let cnpj = this.value;
+          cnpj = cnpj.replace(/\D/g, "");
+          cnpj = cnpj.replace(/(\d{2})(\d)/, "$1.$2");
+          cnpj = cnpj.replace(/(\d{3})(\d)/, "$1.$2");
+          cnpj = cnpj.replace(/(\d{3})(\d)/, "$1/$2");
+          cnpj = cnpj.replace(/(\d{4})(\d)/, "$1-$2");
+          this.value = cnpj;
+      });
+
+      document.getElementById("cpf").addEventListener("input", function() {
+    let cpf = this.value;
+    cpf = cpf.replace(/\D/g, "");
+    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+    cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+    cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    this.value = cpf;
+});
+
+
+      document.getElementById("cpf").addEventListener("input", function() {
+            let  cpf = campo.value;
+        cpf = cpf.replace(/\D/g, '');
+            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+            cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            this.value = cpf;
+        });
+      
+      document.getElementById("telefone").addEventListener("input", function() {
+          let telefone = this.value;
+          telefone = telefone.replace(/\D/g, "");
+          telefone = telefone.replace(/^(\d{2})(\d)/g, "($1) $2");
+          telefone = telefone.replace(/(\d)(\d{4})$/, "$1-$2");
+          this.value = telefone;
+      });
+  </script>
+  <footer>
+    <img src="logo_empresa.png" alt="Logo">
+  </footer>
+</body>
+</html>

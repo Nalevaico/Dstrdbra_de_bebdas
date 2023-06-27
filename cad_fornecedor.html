@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cadastro de Fornecedores</title>
+  <link rel="stylesheet" href="cad_fornecedor.css">
+ 
+
+</head>
+<body>
+  
+ <form action="cad_fornecedor.php" method="post">
+ 
+    <h1>CADASTRO DE FORNECEDORES</h1>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="fornecedor_nome" required><br>
+
+    <label for="empresa">Empresa:</label>
+    <input type="text" id="empresa" name="fornecedor_empresa" required><br>
+
+    <label for="endereco">Endereco:</label>
+    <input type="text" id="endereco" name="fornecedor_endereco" required><br><br>
+    
+    <label for="cnpj">CNPJ:</label>
+    <input type="text" id="cnpj" name="	fornecedor_CNPJ" required placeholder="Ex: XX.XXX.XXX/YYYY-ZZ" maxlength="18">
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" id="telefone" name="fornecedor_telefone" required placeholder="Ex:(DDD) XXXXX-XXXX" maxlength="15" ><br><br>
+
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="fornecedor_email" required>
+
+    <label for="produto">Produto Fornecido:</label>
+    <input type="text" id="produto" name="fornecedor_produto" required><br><br>
+
+    <input type="submit" value="Cadastrar">   
+  </form>
+
+  <script>
+    document.getElementById("cnpj").addEventListener("input", function() {
+          let cnpj = this.value;
+          cnpj = cnpj.replace(/\D/g, "");
+          cnpj = cnpj.replace(/(\d{2})(\d)/, "$1.$2");
+          cnpj = cnpj.replace(/(\d{3})(\d)/, "$1.$2");
+          cnpj = cnpj.replace(/(\d{3})(\d)/, "$1/$2");
+          cnpj = cnpj.replace(/(\d{4})(\d)/, "$1-$2");
+          this.value = cnpj;
+      });
+      
+      document.getElementById("telefone").addEventListener("input", function() {
+          let telefone = this.value;
+          telefone = telefone.replace(/\D/g, "");
+          telefone = telefone.replace(/^(\d{2})(\d)/g, "($1) $2");
+          telefone = telefone.replace(/(\d)(\d{4})$/, "$1-$2");
+          this.value = telefone;
+      });
+  </script>
+  <footer>
+    <img src="logo_empresa.png" alt="Logo">
+  </footer>
+</body>
+</html>

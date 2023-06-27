@@ -1,0 +1,68 @@
+body {
+  background-image: url('fundo2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family:'Times New Roman', Times, serif
+
+}
+
+h1 {
+  color: #000000;
+  text-align: center;
+
+}
+
+form {
+  background-color: #c4a56e;
+  position:relative;
+    top: 5rem;
+    left: 1rem;
+    width: 50%;
+    border-radius: 5px;
+    padding: 40px;
+    margin: 0 auto;
+}
+
+label {
+  color: #000;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="submit"] {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input#salario,
+input#telefone
+ {
+  width: 190px;
+
+}
+
+input[type="submit"] {
+  background-color: #000;
+  color: #ecab39;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #252521;
+  color: #c4a56e;
+}
+
+footer {
+  text-align: left;
+  margin-top: 20px;
+}
+
+footer img {
+  width: 105px;
+}
+

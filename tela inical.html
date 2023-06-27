@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tela Inicial - Distribuidora de Bebidas</title>
+    <style>
+        /* Estilos para centralizar o conteúdo */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        
+        /* Estilos para o formulário */
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form h1 {
+            margin-bottom: 20px;
+        }
+        
+        .form input[type="text"],
+        .form input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px;
+            width: 300px;
+        }
+        
+        .form img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .form .buttons {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .form .buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h1>Tela Inicial - Distribuidora de Bebidas</h1>
+        
+        <!-- Barra de pesquisa -->
+        <form>
+            <input type="text" placeholder="Pesquisar bebidas">
+            <input type="submit" value="Pesquisar">
+        </form>
+        
+        <!-- Imagens -->
+        <img src="caminho/para/imagem1.jpg" alt="Imagem 1">
+        <img src="caminho/para/imagem2.jpg" alt="Imagem 2">
+        
+        <!-- Botões de "Entrar" e "Cadastrar" -->
+        <div class="buttons">
+            <button onclick="entrar()">Entrar</button>
+            <button onclick="cadastrar()">Cadastrar</button>
+        </div>
+    </div>
+    
+    <script>
+        function entrar() {
+            alert("Botão 'Entrar' clicado");
+        }
+        
+        function cadastrar() {
+            alert("Botão 'Cadastrar' clicado");
+        }
+    </script>
+</body>
+</html>
